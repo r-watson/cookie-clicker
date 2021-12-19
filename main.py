@@ -7,8 +7,8 @@ url = "http://orteil.dashnet.org/experiments/cookie/"
 chrome_driver_path = "C:\Programming\Web Driver\chromedriver.exe"
 service = Service(chrome_driver_path)
 driver = webdriver.Chrome(service=service)
-game_over = time.time() + 60 * 5
 driver.get(url)
+game_over = time.time() + 60 * 5
 
 def click_cookie():
     cookie = driver.find_element(By.ID, "cookie")
