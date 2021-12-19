@@ -1,9 +1,6 @@
-import time
-
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
-from selenium.webdriver.common.keys import Keys
 import time
 
 url = "http://orteil.dashnet.org/experiments/cookie/"
@@ -31,22 +28,9 @@ def shop_items():
     cps = driver.find_element(By.ID, 'cps').text
     high_price = []
 
-    # for price in prices:
-    #     if money > price:
-    #         print(prices[price])
     for i in range(len(prices)):
         if money > prices[i]:
             high_price = prices[i]
-            # high_price.append(prices[i])
-            # highest_price = high_price[-1]
-            # print(f"price list: {high_price}, highest price: {highest_price}")
-            # buy = items[prices.index(prices[i])]
-            # print(f"buy{buy}")
-            # print(f"money: {money}")
-            # if money > highest_price:
-            # find_buy = driver.find_element(By.ID, f"buy{buy}")
-            # find_buy.click()
-            # print(f"buying: {buy}")
             time.sleep(.1)
     print(f"cps: {cps}")
     print(high_price)
@@ -60,8 +44,4 @@ def shop_items():
 
 click_cookie()
 
-
 print(f"Your Cookies Per Second was: {driver.find_element(By.ID, 'cps').text}")
-# shop_items()
-
-# driver.quit()
